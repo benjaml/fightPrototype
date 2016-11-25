@@ -32,12 +32,16 @@ public class EnemyManager : MonoBehaviour {
 
     void CheckSwitch()
     {
-              
+         
     }
 
     void playAttack()
     {
-        
+       // attackers.PlayAttack();
+    }
+
+    public void ApplyRes(AttackEnum ae)
+    {
     }
 
 
