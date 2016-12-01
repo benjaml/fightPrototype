@@ -19,12 +19,12 @@ public class Enemy : MonoBehaviour {
 
     // resistance
     [Header("Resistance")]
-    public bool physicFeu = false;
-    public bool physicGlace = false;
-    public bool physicFoudre = false;
-    public bool magicFeu = false;
-    public bool magicGlace = false;
-    public bool magicFoudre = false;
+    public bool physic_fire = false;
+    public bool physic_ice = false;
+    public bool physic_thunder = false;
+    public bool magic_fire = false;
+    public bool magic_ice = false;
+    public bool magic_thunder = false;
 
     // Use this for initialization
     void Start () {
