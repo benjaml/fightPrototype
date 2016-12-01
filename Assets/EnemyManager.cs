@@ -45,7 +45,20 @@ public class EnemyManager : MonoBehaviour {
                 currentBest = e;
             }
         }
-       // if(currentBest )
+       if(currentBest != attacker)
+       {
+            switchPosition(currentBest, attacker);
+       }
+    }
+
+    void switchPosition(Enemy best, Enemy currentAttacker)
+    {
+        Vector3 tmp = best.transform.position;
+        best.transform.position = currentAttacker.transform.position;
+        currentAttacker.transform.position = tmp;
+        renforts.Remove(best);
+        renforts.Add(currentAttacker);
+        attacker = best;
     }
 
     void playAttack()

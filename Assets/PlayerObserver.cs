@@ -18,5 +18,4 @@ public class PlayerObserver : MonoBehaviour {
         if (!playerAttacks.Contains(ae))
             playerAttacks.Add(ae);
     }
-
 }

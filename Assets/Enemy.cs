@@ -10,12 +10,7 @@ public class Enemy : MonoBehaviour {
 
     // Damage
     [Header("Damage")]
-    public float damagePhysicFeu = 10;
-    public float damagePhysicGlace = 10;
-    public float damagePhysicFoudre = 10;
-    public float damageMagicFeu = 10;
-    public float damageMagicGlace = 10;
-    public float damageMagicFoudre = 10;
+    public float damage = 10;
 
     // resistance
     [Header("Resistance")]
@@ -26,17 +21,23 @@ public class Enemy : MonoBehaviour {
     public bool magic_ice = false;
     public bool magic_thunder = false;
 
+    private Player player;
+
     // Use this for initialization
     void Start () {
-	
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+    public void PlayAttack()
+    {
+        player.TakeDamage(damage);
+    }
 
-    void takeDamages (AttackEnum attaque, int damages)
+    public void TakeDamages (AttackEnum attaque, float damages)
     {
         switch (attaque)
         {
@@ -96,11 +97,5 @@ public class Enemy : MonoBehaviour {
     void Death(AttackEnum ae)
     {       
         EnemyManager.instance.ApplyRes(ae);
-    }
-
-
-    public float getScore()
-    {
-        return 0;
     }
 }
