@@ -85,6 +85,8 @@ public class Enemy : MonoBehaviour {
 
         hp = hp - damages;
 
+        PlayerObserver.instance.RegisterAttack(attaque);
+
         if (hp <= 0)
         {
             Death(attaque);
